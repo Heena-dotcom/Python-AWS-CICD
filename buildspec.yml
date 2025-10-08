@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo Running Flask app test...
+      - python -m flask run --host=0.0.0.0 --port=5000 &
+  post_build:
+    commands:
+      - echo Build and test completed successfully.
+
+artifacts:
+  files:
+    - '**/*'

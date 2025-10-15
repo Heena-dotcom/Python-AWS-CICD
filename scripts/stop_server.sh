@@ -1,2 +1,4 @@
 #!/bin/bash
-pkill -f app.py || true
+echo "Stopping existing Flask app..."
+pkill -f "python3 app.py" || true
+echo "Flask app stopped."
